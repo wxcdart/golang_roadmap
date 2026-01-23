@@ -1,6 +1,6 @@
 module golang_roadmap/06_db_access/01_gorm
 
-go 1.20
+go 1.24.11
 
 require (
 	gorm.io/driver/sqlite v1.6.0
