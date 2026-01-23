@@ -1,6 +1,6 @@
 module example.com/logging-zerolog
 
-go 1.20
+go 1.24.11
 
 require github.com/rs/zerolog v1.29.0
 

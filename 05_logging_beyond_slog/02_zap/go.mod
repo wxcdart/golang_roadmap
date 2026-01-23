@@ -1,6 +1,6 @@
 module example.com/logging-zap
 
-go 1.20
+go 1.24.11
 
 require go.uber.org/zap v1.27.1
 
