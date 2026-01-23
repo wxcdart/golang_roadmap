@@ -3,6 +3,7 @@ Database Access Examples
 This folder contains small example modules demonstrating different database access approaches in Go:
 
 - `01_gorm` - GORM examples (ORM)
+- `02_sqlite3_w_go` - SQLite examples using database/sql and go-sqlite3 driver
 
 
 Resources and guides:
