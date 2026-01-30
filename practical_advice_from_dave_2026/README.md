@@ -24,11 +24,6 @@ Based on presentations by Dave Cheney at QCon China and GopherCon Singapore 2019
    - Package, type, function, and variable naming
    - Real-world examples and patterns
 
-4. **[Naming Things in Go](Naming_things_in_Go.md)**
-   - Comprehensive naming guide
-   - Package, type, function, and variable naming
-   - Real-world examples and patterns
-
 5. **[Comments and Documentation](03_comments_documentation.md)**
    - Effective commenting strategies
    - Documenting public symbols
