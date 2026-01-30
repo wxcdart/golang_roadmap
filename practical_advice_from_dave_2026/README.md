@@ -10,35 +10,49 @@ Based on presentations by Dave Cheney at QCon China and GopherCon Singapore 2019
    - Clarity, Simplicity, and Productivity
    - Code examples demonstrating each principle
 
-2. **[Identifiers and Naming](02_identifiers_naming.md)**
+2. **[Zen of Go](Zen_of_Go.md)**
+   - Core philosophy and design principles
+   - Go proverbs and idioms
+
+3. **[Identifiers and Naming](02_identifiers_naming.md)**
    - Choosing clear identifiers
    - Identifier length guidelines
    - Consistent naming conventions
 
-3. **[Comments and Documentation](03_comments_documentation.md)**
+4. **[Naming Things in Go](Naming_things_in_Go.md)**
+   - Comprehensive naming guide
+   - Package, type, function, and variable naming
+   - Real-world examples and patterns
+
+4. **[Naming Things in Go](Naming_things_in_Go.md)**
+   - Comprehensive naming guide
+   - Package, type, function, and variable naming
+   - Real-world examples and patterns
+
+5. **[Comments and Documentation](03_comments_documentation.md)**
    - Effective commenting strategies
    - Documenting public symbols
    - When to comment and when not to
 
-4. **[Package Design](04_package_design.md)**
+6. **[Package Design](04_package_design.md)**
    - Good package names
    - Best practices for package organization
    - Avoiding common pitfalls
 
-5. **[Project Structure](05_project_structure.md)**
+7. **[Project Structure](05_project_structure.md)**
    - Modern Go project layouts
    - Feature-based vs. hexagonal architecture
    - Internal package organization
 
 ### API and Design Patterns
 
-6. **[API Design](06_api_design.md)**
+8. **[API Design](06_api_design.md)**
    - Making APIs hard to misuse
    - Handling nil gracefully
    - Using generics effectively
    - Accept interfaces, return concrete types
 
-7. **[Error Handling](07_error_handling.md)**
+9. **[Error Handling](07_error_handling.md)**
    - Treating errors as values
    - Error wrapping and inspection
    - Structured logging with slog
@@ -46,7 +60,7 @@ Based on presentations by Dave Cheney at QCon China and GopherCon Singapore 2019
 
 ### Testing and Quality
 
-8. **[Testing](08_testing.md)**
+10. **[Testing](08_testing.md)**
    - Table-driven tests
    - Test helpers and organization
    - Fuzzing (Go 1.18+)
@@ -54,7 +68,7 @@ Based on presentations by Dave Cheney at QCon China and GopherCon Singapore 2019
 
 ### Concurrency
 
-9. **[Concurrency](09_concurrency.md)**
+11. **[Concurrency](09_concurrency.md)**
    - Channel axioms and patterns
    - Context for cancellation
    - Worker pools and errgroup
@@ -62,7 +76,7 @@ Based on presentations by Dave Cheney at QCon China and GopherCon Singapore 2019
 
 ### Modern Tooling (2026)
 
-10. **[Modern Tooling and Best Practices](10_modern_tooling.md)**
+12. **[Modern Tooling and Best Practices](10_modern_tooling.md)**
     - Development tools and workflow
     - Performance profiling and PGO
     - Security best practices
