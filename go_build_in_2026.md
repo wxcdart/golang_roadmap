@@ -121,3 +121,35 @@ The new `tool` directive in `go.mod` may have issues with some generators (e.g.,
 
 ### Experimental: `testing/synctest`
 Requires `GOEXPERIMENT=synctest` at build time. API may change in Go 1.25+.
+
+## How Go Uses Go to Build Itself
+
+Go's self-hosting nature means the Go toolchain is built using Go itself, starting from a minimal C-based bootstrap to avoid circular dependencies. This process ensures portability and minimal external dependencies. The build from source follows a staged approach, evolving from the original 2013 description but maintaining core principles.
+
+### The Bootstrap Process (Adapted for Go 1.25)
+
+Building Go from source involves several steps, typically orchestrated by scripts in `$GOROOT/src`. All commands are run from this directory.
+
+1. **Environment Setup and Validation**  
+   Run `make.bash` (or `all.bash` for full build + tests). This performs sanity checks, detects host OS/arch, and compiles `cmd/dist` (a C program) using GCC.
+
+2. **cmd/dist (Core Build Tool)**  
+   `cmd/dist` handles platform detection, code generation in `pkg/runtime`, and builds the initial compilers. It creates a minimal `go_bootstrap` toolchain, stubbing out dependencies like `cgo` to avoid circularity.
+
+3. **go_bootstrap (Minimal Go Toolchain)**  
+   Use `go_bootstrap` to compile the full standard library and replace the `go` tool. This builds a complete toolchain for the host platform.
+
+4. **Full Toolchain Build**  
+   With the bootstrap complete, build the full Go ecosystem, including compilers, linkers, and tools. Cross-compilation is enabled by default.
+
+5. **Testing and Validation**  
+   Run `run.bash` to execute tests: standard library unit tests (`go test std`), runtime/CGO tests, compiler/runtime tests (`go run test`), and API compatibility checks (`go tool api`).
+
+### Key Differences in 2026
+
+- **Modules Integration**: Modern builds incorporate `go.mod` for dependency management, with module proxy support for reproducible builds.
+- **Enhanced Cross-Compilation**: Tools like `goreleaser` or built-in `go build` flags simplify multi-platform builds.
+- **Security and Reproducibility**: Builds may include SBOM generation, vulnerability scanning, and `-trimpath` for deterministic outputs.
+- **CI/CD Automation**: The process is often automated in pipelines (e.g., GitHub Actions), with caching for faster iterations.
+
+For detailed source build instructions, see the [Go source installation guide](https://go.dev/doc/install/source).
